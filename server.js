@@ -1,6 +1,11 @@
 const express = require('express');
+const connectDB = require('./config/db');
+const connectDb = require('./config/db');
 
 const app = express();
+
+//connect DATABASE
+connectDB();
 
 // app.get('/',(req,res)=>res.json({ msg:'Welcome to Contact Store API .....'}));
 
@@ -11,4 +16,4 @@ app.use('/api/users', require('./routes/users'));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, ()=> console.log(`server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`server started on port ${PORT}`));
